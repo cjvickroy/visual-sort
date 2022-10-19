@@ -1,0 +1,24 @@
+.page-header {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.page-header h1 {
+    margin: 0px;
+    padding: 40px 20px;
+}
+
+main {
+    padding: 0px 20px;
+    font-family: 'Roboto';
+}
+
+main p,
+main a {
+    font-size: 18px;
+}
+
+main a {
+    font-weight: bolder !important;
+}
