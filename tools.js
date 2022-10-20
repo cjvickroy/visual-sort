@@ -1,7 +1,43 @@
+//--------Globals--------
+var initArray = new Array(10);
+let isPaused = {
+    flag: false
+};
+
+function updateElementCount(array){
+    var count = document.getElementById('inputBox').valueAsNumber;
+    initArray = new Array(count);
+    init(initArray);
+}
+
+function playPause(flagObject){
+    if (flagObject.flag === true) {
+        flagObject.flag = false;
+        console.log("Flag is now " + flagObject.flag);
+        return;
+        
+    }
+    else {
+        flagObject.flag = true;
+        console.log("Flag is now " + flagObject.flag);
+        return;
+
+    }
+
+}
+
+function checkFlag(flagObject){
+    if (flagObject.flag === true){
+        window.setTimeout(checkFlag, 100, flagObject);
+    }
+    else {
+        return;
+    }
+}
 
 function fillArray(array) {
     for (let i = 1; i < array.length + 1; i++) {
-        array[i - 1] = i / 10;
+        array[i - 1] = i;
     }
     return array;
 }
@@ -19,10 +55,11 @@ function randomize(array) {
 
 function fillContainer(array) {
     var container = document.getElementsByClassName('element-container');
+    var maxSize = array.length;
     for (let i = 0; i < array.length; i++) {
         var element = document.createElement('div');
         element.classList.add("element-item");
-        element.style.height = array[i] * 400 + "px";
+        element.style.height = (array[i] / maxSize) * 100 + "%";
         container[0].appendChild(element);
     }
 }

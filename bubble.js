@@ -20,38 +20,29 @@ async function bubbleSort(thisArray) {
   //Grabbing the slider for speed controls
   var slider = document.getElementById('slider');
   var sliderValue = slider.value;
- console.log(sliderValue);
 
   //Fill the array, 1-maxsize
   thisArray = fillArray(thisArray);
-
   //Randomize the array
   thisArray = randomize(thisArray);
   fillContainer(thisArray);
 
-  //Log the unsorted array
-  console.log("Unsorted array: " + thisArray);
-
   //------Bubble sort------
   //Loop through the array
+  
   for (let i = 0; i < thisArray.length; i++) {
     for (let j = 0; j < (thisArray.length - i - 1); j++) {
-
-      //Swap if out of order
       if (thisArray[j] > thisArray[j + 1]) {
         var temp = thisArray[j]
-        
+        checkFlag(isPaused);
         await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
         thisArray[j] = thisArray[j + 1]
         thisArray[j + 1] = temp
-        console.log("Swapping index " + j + " and " + (j+1));
+
         refreshContainer(thisArray);
       }
     }
   }
-
-  //Output the sorted array
-  console.log("Sorted array: " + thisArray);
 
 }
 
@@ -95,4 +86,14 @@ function clearContainer() {
 function refreshContainer(array) {
   clearContainer();
   fillContainer(array);
+}
+
+function waitFor(conditionFunction) {
+
+  const poll = resolve => {
+    if(conditionFunction()) resolve();
+    else setTimeout(_ => poll(resolve), 400);
+  }
+
+  return new Promise(poll);
 }
