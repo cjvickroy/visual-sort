@@ -34,15 +34,15 @@ async function bubbleSort(thisArray) {
     for (let j = 0; j < (thisArray.length - i - 1); j++) {
       if (thisArray[j] > thisArray[j + 1]) {
         var temp = thisArray[j]
-        checkFlag(isPaused);
         await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
         thisArray[j] = thisArray[j + 1]
         thisArray[j + 1] = temp
-
         refreshContainer(thisArray);
+        highlightCurrent(j+1);
       }
     }
   }
+  refreshContainer(thisArray);
 
 }
 

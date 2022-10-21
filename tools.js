@@ -4,6 +4,11 @@ let isPaused = {
     flag: false
 };
 
+function highlightCurrent(index){
+    var item = $('.element-item');
+    $(item[index]).css('background-color', 'red');
+}
+
 function updateElementCount(array){
     var count = document.getElementById('inputBox').valueAsNumber;
     initArray = new Array(count);
