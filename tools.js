@@ -19,14 +19,12 @@ function playPause(flagObject){
     if (flagObject.flag === true) {
         flagObject.flag = false;
         console.log("Flag is now " + flagObject.flag);
-        return;
-        
+        return;   
     }
     else {
         flagObject.flag = true;
         console.log("Flag is now " + flagObject.flag);
         return;
-
     }
 
 }
