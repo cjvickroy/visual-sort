@@ -4,9 +4,9 @@ let isPaused = {
     flag: false
 };
 
-function highlightCurrent(index){
+function highlightCurrent(index, color){
     var item = $('.element-item');
-    $(item[index]).css('background-color', 'red');
+    $(item[index]).css('background-color', color);
 }
 
 function updateElementCount(array){
