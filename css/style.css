@@ -1,6 +1,6 @@
 :root {
-    --accent: #26dec5;
-    --darkAccent: #0f6156;
+    --accent: #53bd9a;
+    --darkAccent: #2e6855;
 }
 
 .page-header {
@@ -27,10 +27,13 @@ body {
 
 main {
     padding: 60px 60px;
+    margin: 40px 10%;
     font-family: 'Roboto';
     display: flex;
     flex-direction: row;
-
+    background-color: #000000;
+    border-radius: 20px;
+    
 }
 
 .left-description h2 {
@@ -72,17 +75,20 @@ main a {
     width: 50%;
     margin-left: 100px;
     display: flex;
-}
-
-.main-right .sort-menu {
-    display: flex;
     flex-direction: column;
     width: max-content;
     gap: 30px;
-    background-color: black;
-    padding: 20px;
+    background-color: #242424;
+    padding: 3px;
     border-radius: 20px;
     margin: auto;
+}
+
+.sort-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 20px;
 }
 
 
@@ -110,8 +116,8 @@ main a {
     gap: 20px;
     border: 3px solid black;
     border-radius: 20px;
-    padding: 20px;
-    background-color: black;
+    padding: 33px;
+    background-color: #242424;
     max-width: 300px;
 }
 
@@ -157,4 +163,8 @@ main a {
 
 .text-box-test input{
     height: 100px;
+}
+
+.inputBox {
+    width: 100px;
 }

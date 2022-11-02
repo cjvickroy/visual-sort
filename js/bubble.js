@@ -21,6 +21,7 @@ async function bubbleSort(thisArray) {
   
   for (let i = 0; i < thisArray.length; i++) {
     for (let j = 0; j < (thisArray.length - i - 1); j++) {
+      var sliderValue = slider.value;
       if (isPaused.flag == true){
         break;
       }
