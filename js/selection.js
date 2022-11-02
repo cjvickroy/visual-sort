@@ -20,9 +20,6 @@ async function selectionSort(thisArray) {
 
     //Grabbing the slider for speed controls
     var slider = document.getElementById('slider');
-    var sliderValue = slider.value;
-
-    console.log("Unsorted array: " + thisArray);
 
     //------Insertion sort-----
 
@@ -31,17 +28,22 @@ async function selectionSort(thisArray) {
     for (let i = 0; i < thisArray.length - 1; i++) {
         await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
         k = i;
-        for (j = i + 1; j < thisArray.length; j++)
-        if (thisArray[j] < thisArray[k])
-            k = j;
- 
+        var sliderValue = slider.value;
+        if (isPaused.flag == true){
+            break;
+        }
+        for (j = i + 1; j < thisArray.length; j++) {
+            if (thisArray[j] < thisArray[k])
+                k = j;
+        }
+
         // Swap the found minimum element with the first element
-        swapIndex(thisArray,k, i);
+        swapIndex(thisArray, k, i);
         refreshContainer(thisArray);
         highlightCurrent(k, 'red');
         highlightCurrent(i, 'blue');
     }
-    console.log("Sorted array: " + thisArray);
+    isPaused.flag = false;
     refreshContainer(thisArray);
 }
 

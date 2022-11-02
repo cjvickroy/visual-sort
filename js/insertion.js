@@ -15,7 +15,6 @@ async function insertionSort(thisArray) {
 
   //Grabbing the slider for speed controls
   var slider = document.getElementById('slider');
-  var sliderValue = slider.value;
 
   //------Insertion sort-----
 
@@ -26,7 +25,11 @@ async function insertionSort(thisArray) {
     j = i - 1;
 
     while (j >= 0 && thisArray[j] > k) {
-      await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
+      if (isPaused.flag == true){
+        break;
+      }
+    var sliderValue = slider.value;
+    await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
       thisArray[j + 1] = thisArray[j];
       j = j - 1;
       refreshContainer(thisArray);
@@ -37,6 +40,7 @@ async function insertionSort(thisArray) {
     //refreshContainer(thisArray);
     // highlightCurrent(k, 'red');
   }
+  isPaused.flag = false;
   refreshContainer(thisArray);
 }
 
