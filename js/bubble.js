@@ -1,5 +1,5 @@
 
-function init(initArray){
+function init(initArray) {
   clearContainer();
   initArray = fillArray(initArray);
   initArray = randomize(initArray);
@@ -11,18 +11,18 @@ function changeArraySize(size) {
 }
 
 async function bubbleSort(thisArray) {
-  
+
   //Grabbing the slider for speed controls
   var slider = document.getElementById('slider');
   var sliderValue = slider.value;
 
   //------Bubble sort------
   //Loop through the array
-  
+
   for (let i = 0; i < thisArray.length; i++) {
     for (let j = 0; j < (thisArray.length - i - 1); j++) {
       var sliderValue = slider.value;
-      if (isPaused.flag == true){
+      if (isPaused.flag == true) {
         break;
       }
       if (thisArray[j] > thisArray[j + 1]) {
@@ -31,7 +31,7 @@ async function bubbleSort(thisArray) {
         thisArray[j] = thisArray[j + 1]
         thisArray[j + 1] = temp
         refreshContainer(thisArray);
-        highlightCurrent(j+1, 'red');
+        highlightCurrent(j + 1, 'red');
       }
     }
   }
