@@ -24,12 +24,13 @@ async function insertionSort(thisArray) {
     k = thisArray[i];
     j = i - 1;
 
+    // Move elements that are greater than k one index ahead of their current index.
     while (j >= 0 && thisArray[j] > k) {
-      if (isPaused.flag == true){
+      if (isPaused.flag == true) {
         break;
       }
-    var sliderValue = slider.value;
-    await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
+      var sliderValue = slider.value;
+      await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
       thisArray[j + 1] = thisArray[j];
       j = j - 1;
       refreshContainer(thisArray);

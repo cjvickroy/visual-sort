@@ -33,9 +33,10 @@ async function cocktailSort(thisArray) {
             if (isPaused.flag == true) {
                 break;
               }
-            sliderValue = slider.value;
-            await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
+
             if (thisArray[i] > thisArray[i + 1]){
+                sliderValue = slider.value;
+                await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
                 swap(thisArray, i, i+1);
                 refreshContainer(thisArray);
                 highlightCurrent(i, 'red');
@@ -53,9 +54,9 @@ async function cocktailSort(thisArray) {
             if (isPaused.flag == true) {
                 break;
               }
-            sliderValue = slider.value;
-            await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
             if (thisArray[i] > thisArray[i + 1]){
+                sliderValue = slider.value;
+                await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
                 swap(thisArray, i, i+1);
                 refreshContainer(thisArray);
                 highlightCurrent(i, 'red');

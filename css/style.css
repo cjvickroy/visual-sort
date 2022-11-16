@@ -41,6 +41,16 @@ main {
     margin: 0px;
     color: var(--accent);
     padding-bottom: 20px;
+    font-size: 30px;
+}
+
+.left-description h3 {
+    color: var(--accent);
+}
+
+.left-description ul {
+    color: white;
+    font-size: 18px;
 }
 
 .btn {
@@ -82,7 +92,8 @@ main a {
     background-color: #242424;
     padding: 3px;
     border-radius: 20px;
-    margin: auto;
+    margin: 0 auto;
+    height: min-content;
 }
 
 .sort-menu {
@@ -90,8 +101,13 @@ main a {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     padding: 20px;
+    height: min-content;
 }
 
+.sort-menu a {
+    font-size: 22px;
+    margin: 10px 0;
+}
 
 .element-container {
     display: flex;
@@ -109,6 +125,8 @@ main a {
     width: 100%;
     background-color: var(--accent);
     margin-top: auto;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .user-controls {
@@ -120,6 +138,29 @@ main a {
     padding: 33px;
     background-color: #242424;
     max-width: 300px;
+}
+
+.return-home button {
+    background-color: var(--accent);
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Roboto';
+    cursor: pointer;
+    text-decoration: unset;
+    margin-bottom: 20px;
+}
+
+.return-home button p,
+.return-home button a {
+    color: white;
+    text-decoration: none;
+}
+
+.return-home button p {
+    margin: 4px;
 }
 
 .user-controls button {
@@ -162,10 +203,36 @@ main a {
     border-radius: 5px;
   }
 
-.text-box-test input{
-    height: 100px;
+.text-box-text input{
+    height: 30px;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 50px;
+}
+
+.text-box-text {
+    display: flex;
+    gap: 20px;
 }
 
 .inputBox {
     width: 100px;
+}
+
+.icon {
+    width:25px;
+    filter: invert(100%);
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+button > p {
+    text-align: center;
+    margin: 4px;
 }

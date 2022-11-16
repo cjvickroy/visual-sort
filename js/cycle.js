@@ -38,11 +38,11 @@ async function cycleSort(thisArray) {
             if (isPaused.flag == true) {
                 break;
               }
-            var sliderValue = slider.value;
-            await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
+            //var sliderValue = slider.value;
+            //await new Promise(resolve => setTimeout(resolve, 110 - sliderValue));
+            refreshContainer(thisArray);
+            highlightCurrent(position, 'blue');
             if (thisArray[j] < curr){
-                refreshContainer(thisArray);
-                highlightCurrent(position, 'blue');
                 position++;
             }
         }

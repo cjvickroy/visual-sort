@@ -18,19 +18,31 @@
 
   <div class="small-header">
     <div class="return-home">
-      <a href="../index.html" class="btn btn-primary">Go back</a>
+      <button>
+        <img class="icon" src="../svg/home.svg" alt="home">
+        <a href="../index.html"><p>Return Home</p></a>
+      </button>
     </div>
     <div class="left-description">
-      <h2>Insertion Sort</h2>
+      <h2>Bubble Sort</h2>
     </div>
   </div>
 
   <main>
     <div class="main-left">
       <div class="user-controls">
-        <button onclick="insertionSort(initArray)">Start</button>
-        <button onclick="playPause(isPaused)">Stop</button>
-        <button onclick="init(initArray)">Reset</button>
+        <button onclick="insertionSort(initArray)">
+          <img class="icon" src="../svg/play.svg">
+          <p>Start</p>
+          </button>
+        <button onclick="playPause(isPaused)">
+          <img class="icon" src="../svg/stop.svg">
+          <p>Stop</p>
+        </button>
+        <button onclick="init(initArray)">
+          <img class="icon" src="../svg/refresh.svg">
+          <p>Reset</p>
+        </button>
         <div class="control-slider">
           <h3>Speed</h3>
           <input type="range" min="10" max="100" value="50" class="slider" id="slider">
@@ -39,7 +51,7 @@
           <h3>Number of Elements</h3>
           <div class="text-box-text">
             <input type="number" min="10" max="100" class="inputBox" id="inputBox">
-            <button onclick="updateElementCount(initArray)">Set</button>
+            <button onclick="updateElementCount(initArray)"><p>Set</p></button>
           </div>
           <p>[Range: 10-100]</p>
         </div>
