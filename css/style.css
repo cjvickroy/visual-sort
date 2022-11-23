@@ -349,13 +349,8 @@ code {
   }
 
   pre code {
-    background-color: #eee;
-    border: 1px solid #999;
-    display: initial;
-    padding: 20px;
-    width: 50%;
-    margin: auto;
-
+    margin: 0 15%;
+    width: 100%;
   }
 
   pre {
