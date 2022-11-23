@@ -94,17 +94,48 @@
       <div class="tab-content">
         <pre>
           <code class="language-cpp">
-            void bubbleSort(int array[], int n){
+            void cycleSort(int array[], int n){
               int temp;
 
-              for (int i = 0; i < n - 1; i++){
-                for (j = 0; j < n - i - 1; j++){
+              for (int start = 0; start <= n - 2; start++){
+                int item = array[start];
+                int position = start;
 
-                  //If the current value is larger than the next value, swap values
-                  if (array[j] > array[j+1]){
-                    temp = array[j+1];
-                    array[j+1] = array[j];
-                    array[j] = temp;
+                for (int i = start + 1; i < n; i++){
+                  if (array[i] < item){
+                    position++;
+                  }
+                }
+
+                if (position == start) continue;
+
+                while (item == array[position]){
+                  position++;
+                }
+
+                if (position != start){
+                  temp = array[position];
+                  array[position] = item;
+                  item = temp;
+                }
+
+                while (position != start){
+                  position = start;
+
+                  for (int i = start + 1; i < n; i++){
+                    if (array[i] < item){
+                      position++;
+                    }
+
+                    while (item == array[position]){
+                      position++;
+                    }
+
+                    if (item != array[position]){
+                      temp = array[position];
+                      array[position] = item;
+                      item = temp;
+                    }
                   }
                 }
               }
@@ -117,15 +148,37 @@
       <div class="tab-content">
         <pre>
           <code class="language-python">
-            def bubbleSort(array):
+            def cycleSort(array):
               n = len(array)
 
-              for i in range(n):
-                for j in range(0, n - i - 1):
+              for (start in range(0, n - 1)):
+                item = array[start]
+                position = start
 
-                #If the current value is larger than the next value, swap values
-                if array[j] > array[j+1]:
-                  array[j], array[j+1] = array[j+1], array[j]
+                for i in range(start + 1, n):
+                  if array[i] < item:
+                    position = position + 1
+
+                if position == start:
+                  continue
+
+                while item == array[position]:
+                  position = position + 1
+                
+                array[position], item = item, array[position]
+
+                while position != start:
+                  positoin = start
+                  
+                  for i in range(start + 1, n):
+                    if array[i] < item:
+                      position = position + 1
+
+                  while item == array[position]:
+                    position = position + 1
+                  
+                  array[position], item = item, array[position]
+
           </code>
         </pre>
       </div>
@@ -134,17 +187,51 @@
       <div class="tab-content">
         <pre>
           <code class="language-js">
-            function bubbleSort(array){
+            function cycleSort(array){
               var n = array.length;
+              let temp;
 
-              for (let i = 0; i < n - 1; i++){
-                for (let j = 0; j < n - i - 1; j++){
+              for (let start = 0; start <= n - 2; start++){
+                let item = array[start];
+                let position = start;
 
-                  //If the current value is larger than the next value, swap values
-                  if (array[j] > array[j+1]){
-                    let temp = array[j+1];
-                    array[j+1] = array[j];
-                    array[j] = temp;
+                for (let i = start + 1; i < n; i++){
+                  if (array[i] < item){
+                    position++;
+                  }
+                }
+
+                if (position == start){
+                  continue;
+                }
+
+                while (item == array[position]){
+                  position++;
+                }
+
+                if (position != start){
+                  temp = array[position];
+                  array[position] = item;
+                  item = temp;
+                }
+
+                while (position != start){
+                  position = start;
+
+                  for (let i = start + 1; i < n; i++){
+                    if (array[i] < item){
+                      position++;
+                    }
+
+                    while (item == array[position]){
+                      position++;
+                    }
+
+                    if (item != array[position]){
+                      temp = array[position];
+                      array[position] = item;
+                      item = temp;
+                    }
                   }
                 }
               }

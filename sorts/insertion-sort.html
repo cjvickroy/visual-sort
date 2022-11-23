@@ -96,19 +96,20 @@
       <div class="tab-content">
         <pre>
           <code class="language-cpp">
-            void bubbleSort(int array[], int n){
-              int temp;
+            void insertionSort(int array[], int n){
+              int j;
+              int k;
 
-              for (int i = 0; i < n - 1; i++){
-                for (j = 0; j < n - i - 1; j++){
+              for (int i = 0; i < n; i++){
+                k = array[i];
+                j = i - 1;
 
-                  //If the current value is larger than the next value, swap values
-                  if (array[j] > array[j+1]){
-                    temp = array[j+1];
-                    array[j+1] = array[j];
-                    array[j] = temp;
-                  }
+                while (j >= 0 && array[j] > k){
+                  array[j + 1] - array[j];
+                  j--;
                 }
+
+                array[j + 1] = k;
               }
             }
           </code>
@@ -119,15 +120,17 @@
       <div class="tab-content">
         <pre>
           <code class="language-python">
-            def bubbleSort(array):
-              n = len(array)
+            def insertionSort(array):
+              for i in range(1, len(array)):
 
-              for i in range(n):
-                for j in range(0, n - i - 1):
+                k = array[i]
+                j = i - 1
 
-                #If the current value is larger than the next value, swap values
-                if array[j] > array[j+1]:
-                  array[j], array[j+1] = array[j+1], array[j]
+                while j >= 0 and k < array[j]:
+                  array[j + 1] - array[j]
+                  j = j - 1
+                
+                array[j + 1] = k
           </code>
         </pre>
       </div>
@@ -136,19 +139,19 @@
       <div class="tab-content">
         <pre>
           <code class="language-js">
-            function bubbleSort(array){
+            function insertionSort(array){
               var n = array.length;
+              let j, k;
+              for (let i = 0; i < n; i++){
+                k = array[i];
+                j = i - 1;
 
-              for (let i = 0; i < n - 1; i++){
-                for (let j = 0; j < n - i - 1; j++){
-
-                  //If the current value is larger than the next value, swap values
-                  if (array[j] > array[j+1]){
-                    let temp = array[j+1];
-                    array[j+1] = array[j];
-                    array[j] = temp;
-                  }
+                while (j >= 0 && array[j] > k){
+                  array[j+1] = array[j];
+                  j--;
                 }
+
+                array[j+1] = k;
               }
             }
           </code>
@@ -157,13 +160,10 @@
     </div>
 
     <div class="about-section">
-      <h2>About Bubble Sort</h2>
+      <h2>About Insertion Sort</h2>
       <br>
       <p>
-        Bubble sorts are among one of the simplest sorting algorithms. It is an exponential sort that repeatedly
-        compares the current index with the next index.
-
-        If the current value is greater than the next value, the sort simply swaps the two values.
+        
       </p>
     </div>
 

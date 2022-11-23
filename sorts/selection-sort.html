@@ -92,18 +92,24 @@
       <div class="tab-content">
         <pre>
           <code class="language-cpp">
-            void bubbleSort(int array[], int n){
+            void selectionSort(int array[], int n){
+              int j;
+              int min;
               int temp;
 
               for (int i = 0; i < n - 1; i++){
-                for (j = 0; j < n - i - 1; j++){
+                min = i;
 
-                  //If the current value is larger than the next value, swap values
-                  if (array[j] > array[j+1]){
-                    temp = array[j+1];
-                    array[j+1] = array[j];
-                    array[j] = temp;
+                for (j = i + 1; j < n; j++){
+                  if (array[j] < array[min]){
+                    min = j;
                   }
+                }
+
+                if (min != i){
+                  temp = array[i];
+                  array[i] = array[min];
+                  array[min] = temp;
                 }
               }
             }
@@ -115,15 +121,16 @@
       <div class="tab-content">
         <pre>
           <code class="language-python">
-            def bubbleSort(array):
-              n = len(array)
+            def selectionSort(array):
+              for i in range(len(array)):
+                min = i
 
-              for i in range(n):
-                for j in range(0, n - i - 1):
+                for j in range(i + 1, len(array)):
+                  if array[min] > array[j]:
+                    min = j
 
-                #If the current value is larger than the next value, swap values
-                if array[j] > array[j+1]:
-                  array[j], array[j+1] = array[j+1], array[j]
+                array[i], array[min] = array[min], array[i]
+              
           </code>
         </pre>
       </div>
@@ -132,20 +139,23 @@
       <div class="tab-content">
         <pre>
           <code class="language-js">
-            function bubbleSort(array){
+            function selectionSort(array){
               var n = array.length;
+              var min;
 
               for (let i = 0; i < n - 1; i++){
-                for (let j = 0; j < n - i - 1; j++){
+                min = i;
 
-                  //If the current value is larger than the next value, swap values
-                  if (array[j] > array[j+1]){
-                    let temp = array[j+1];
-                    array[j+1] = array[j];
-                    array[j] = temp;
+                for (let j = i + 1; j < n; j++){
+                  if (array[j] < array[min]){
+                    min = j;
                   }
                 }
+                let temp = array[i];
+                array[i] = array[min];
+                array[min] = temp;
               }
+              
             }
           </code>
         </pre>

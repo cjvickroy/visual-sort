@@ -93,19 +93,39 @@
       <div class="tab-content">
         <pre>
           <code class="language-cpp">
-            void bubbleSort(int array[], int n){
+            void cocktailSort(int array[], int n){
+              bool swapped = true;
+              int start = 0;
+              int end = n - 1;
               int temp;
 
-              for (int i = 0; i < n - 1; i++){
-                for (j = 0; j < n - i - 1; j++){
+              while (swapped){
+                swapped = false;
 
-                  //If the current value is larger than the next value, swap values
-                  if (array[j] > array[j+1]){
-                    temp = array[j+1];
-                    array[j+1] = array[j];
-                    array[j] = temp;
+                for (int i = start; i < end; i++){
+                  if (array[i] > array[i + 1]){
+                    temp = array[i + 1];
+                    array[i + 1] = array[i];
+                    array[i] = temp;
+                    swapped = true;
                   }
                 }
+
+                if (!swapped) break;
+
+                swapped = false;
+                end = end - 1;
+
+                for (int i = end - 1; i >= start; i--){
+                  if (a[i] > a[i + 1]){
+                    temp = array[i + 1];
+                    array[i + 1] = array[i];
+                    array[i] = temp;
+                    swapped = true;
+                  }
+                }
+
+                start = start + 1;
               }
             }
           </code>
@@ -116,15 +136,33 @@
       <div class="tab-content">
         <pre>
           <code class="language-python">
-            def bubbleSort(array):
+            def cocktailSort(array):
               n = len(array)
+              swapped = True
+              start = 0
+              end = n - 1;
+              
+              while (swapped):
+                swapped = False
+                
+                for i in range (start, end):
+                  if (array[i] > array[i + 1]):
+                    array[i], array[i + 1] = array[i + 1], array[i]
+                    swapped = True
 
-              for i in range(n):
-                for j in range(0, n - i - 1):
+                if (!swapped):
+                  break
 
-                #If the current value is larger than the next value, swap values
-                if array[j] > array[j+1]:
-                  array[j], array[j+1] = array[j+1], array[j]
+                swapped = False 
+                end = end - 1
+
+                for i in range (end - 1, start - 1, -1):
+                  if (array[i] > array[i + 1]):
+                    array[i], array[i + 1] = array[i + 1], array[i]
+                    swapped = True
+
+                start = start + 1
+              
           </code>
         </pre>
       </div>
@@ -133,19 +171,41 @@
       <div class="tab-content">
         <pre>
           <code class="language-js">
-            function bubbleSort(array){
-              var n = array.length;
+            function cocktailSort(array){
+              let swapped = true;
+              let start = 0;
+              let end = array.length;
+              let temp;
 
-              for (let i = 0; i < n - 1; i++){
-                for (let j = 0; j < n - i - 1; j++){
+              while (swapped) {
+                swapped = false;
 
-                  //If the current value is larger than the next value, swap values
-                  if (array[j] > array[j+1]){
-                    let temp = array[j+1];
-                    array[j+1] = array[j];
-                    array[j] = temp;
+                for (let i = start; i < end - 1; i++){
+                  if (array[i] > array[i +1 ]){
+                    temp = a[i + 1];
+                    array[i + 1] = array[i];
+                    array[i] = temp;
+                    swapped = true;
                   }
                 }
+
+                if (!swapped){
+                  break;
+                }
+
+                swapped = false
+                end--;
+
+                for (let i = end - 1; i >= start; i--){
+                  if (array[i] > array[i +1 ]){
+                    temp = a[i + 1];
+                    array[i + 1] = array[i];
+                    array[i] = temp;
+                    swapped = true;
+                  }
+                }
+
+                start++;
               }
             }
           </code>

@@ -23,3 +23,7 @@
 .hljs-type {
     color: #2283ff !important;
 }
+
+.hljs-keyword {
+    color: #b09609 !important;
+}
