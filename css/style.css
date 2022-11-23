@@ -361,3 +361,13 @@ code {
   pre {
     display: flex;
   }
+
+.link-out {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bolder;
+}
+
+.link-out:hover {
+    color: var(--darkAccent);
+}
