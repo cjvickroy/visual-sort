@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/hljs_theme_patch.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/default.min.css">
 </head>
 <header class="page-header">
   <h1>Visual Sorting</h1>
@@ -20,11 +22,13 @@
     <div class="return-home">
       <button>
         <img class="icon" src="../svg/home.svg" alt="home">
-        <a href="../index.html"><p>Return Home</p></a>
+        <a href="../index.html">
+          <p>Return Home</p>
+        </a>
       </button>
     </div>
     <div class="left-description">
-      <h2>Bubble Sort</h2>
+      <h2>Insertion Sort</h2>
     </div>
   </div>
 
@@ -34,7 +38,7 @@
         <button onclick="insertionSort(initArray)">
           <img class="icon" src="../svg/play.svg">
           <p>Start</p>
-          </button>
+        </button>
         <button onclick="playPause(isPaused)">
           <img class="icon" src="../svg/stop.svg">
           <p>Stop</p>
@@ -51,7 +55,9 @@
           <h3>Number of Elements</h3>
           <div class="text-box-text">
             <input type="number" min="10" max="100" class="inputBox" id="inputBox">
-            <button onclick="updateElementCount(initArray)"><p>Set</p></button>
+            <button onclick="updateElementCount(initArray)">
+              <p>Set</p>
+            </button>
           </div>
           <p>[Range: 10-100]</p>
         </div>
@@ -65,10 +71,111 @@
     </div>
 
   </main>
+  <div class="tabs-container">
+    <div class="tabs-title">
+      <h2>Implementations</h2>
+    </div>
+    <div class="tabs-list-container">
 
+      <ul class="tabs" role="tablist">
+        <li role="tab" aria-controls="tab-c++" class="">
+          <a href="#tab-cpp" class="tab">C++</a>
+        </li>
+        <li role="tab" aria-controls="tab-python" class="">
+          <a href="#tab-python" class="tab">Python</a>
+        </li>
+
+        <li role="tab" aria-controls="tab-javascript" class="">
+          <a href="#tab-javascript" class="tab">JavaScript</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="panels-container">
+    <div id="tab-cpp" role="tabpanel">
+      <div class="tab-content">
+        <pre>
+          <code class="language-cpp">
+            void bubbleSort(int array[], int n){
+              int temp;
+
+              for (int i = 0; i < n - 1; i++){
+                for (j = 0; j < n - i - 1; j++){
+
+                  //If the current value is larger than the next value, swap values
+                  if (array[j] > array[j+1]){
+                    temp = array[j+1];
+                    array[j+1] = array[j];
+                    array[j] = temp;
+                  }
+                }
+              }
+            }
+          </code>
+        </pre>
+      </div>
+    </div>
+    <div id="tab-python" role="tabpanel">
+      <div class="tab-content">
+        <pre>
+          <code class="language-python">
+            def bubbleSort(array):
+              n = len(array)
+
+              for i in range(n):
+                for j in range(0, n - i - 1):
+
+                #If the current value is larger than the next value, swap values
+                if array[j] > array[j+1]:
+                  array[j], array[j+1] = array[j+1], array[j]
+          </code>
+        </pre>
+      </div>
+    </div>
+    <div id="tab-javascript" role="tabpanel">
+      <div class="tab-content">
+        <pre>
+          <code class="language-js">
+            function bubbleSort(array){
+              var n = array.length;
+
+              for (let i = 0; i < n - 1; i++){
+                for (let j = 0; j < n - i - 1; j++){
+
+                  //If the current value is larger than the next value, swap values
+                  if (array[j] > array[j+1]){
+                    let temp = array[j+1];
+                    array[j+1] = array[j];
+                    array[j] = temp;
+                  }
+                }
+              }
+            }
+          </code>
+        </pre>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <h2>About Bubble Sort</h2>
+      <br>
+      <p>
+        Bubble sorts are among one of the simplest sorting algorithms. It is an exponential sort that repeatedly
+        compares the current index with the next index.
+
+        If the current value is greater than the next value, the sort simply swaps the two values.
+      </p>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>
+  <script src="../plugins/jquery.easytabs.js" type="text/javascript"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="text/javascript" src="../js/tabs.js"></script>
   <script type="text/javascript" src="../js/insertion.js"></script>
   <script type="text/javascript" src="../js/tools.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
 </body>
 
 </html>
