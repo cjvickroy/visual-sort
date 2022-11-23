@@ -3,6 +3,10 @@
     --darkAccent: #2e6855;
 }
 
+html {
+    scroll-behavior: smooth !important;
+}
+
 .page-header {
     background-color: black;
     color: white;
@@ -34,7 +38,7 @@ main {
     flex-direction: row;
     background-color: #000000;
     border-radius: 20px;
-    
+
 }
 
 .left-description h2 {
@@ -197,13 +201,15 @@ main a {
 .slider::-moz-range-thumb {
     width: 15px;
     height: 15px;
-    background: var(--accent); /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    background: var(--accent);
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
     border: 2px solid white;
     border-radius: 5px;
-  }
+}
 
-.text-box-text input{
+.text-box-text input {
     height: 30px;
     font-size: 18px;
     border-radius: 20px;
@@ -221,7 +227,7 @@ main a {
 }
 
 .icon {
-    width:25px;
+    width: 25px;
     filter: invert(100%);
 }
 
@@ -232,7 +238,126 @@ button {
     justify-content: center;
 }
 
-button > p {
+button>p {
     text-align: center;
     margin: 4px;
 }
+
+/*------Tabs------*/
+.tabs li a {
+    color: white;
+    font-family: 'Roboto';
+    font-weight: bolder;
+}
+
+code {
+    background-color: black !important;
+    border: unset !important;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    width: min-content;
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
+}
+
+.panels-container {
+    padding-top: 20px;
+}
+
+.tabs-container {
+    margin: 0 10%;
+    background: black !important;
+    border-radius: 20px;
+}
+
+.tabs-title {
+    color: white;
+    font-family: 'Roboto';
+    padding: 10px 30px;
+    border-bottom: 3px solid var(--accent);
+}
+
+.about-section {
+    color: white;
+    background: black;
+    margin: 100px 10%;
+    text-align: left;
+    padding: 30px;
+    border-radius: 20px;
+    font-family: 'Roboto';
+}
+
+.about-section h2 {
+    color: var(--accent);
+}
+
+.about-section p {
+    font-size: 18px;
+}
+
+
+/*-------------Tabs Styling--------------*/
+.tabs-container {
+    background: #e5e5e5;
+  }
+
+  .tabs-list-container {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      width: 25%;
+    }
+
+  }
+
+  .tab {
+    position: relative;
+    display: block;
+    padding: 30px 0;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+
+    &.-active {
+      background: #fff;
+    }
+  }
+
+  .panels-container {
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .notice {
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+  }
+
+  pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: initial;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+
+  }
+
+  pre {
+    display: flex;
+  }
