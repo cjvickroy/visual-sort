@@ -14,7 +14,10 @@
   
 </head>
 <header class="page-header">
+  <a href="../index.html" style="text-decoration: none;" class="logo">
+  <img src="../png/visualsort.png">
   <h1>Visual Sorting</h1>
+</a>
 </header>
 
 <body onload="init(initArray)"="margin: 0px;">
@@ -173,6 +176,8 @@
       <p>
         The Shell sorting method is a variant of the <a class="link-out" href="insertion-sort.html">Insertion Sort</a>. The difference between the two is that a Shell sort allows 
         the swapping of two indecies that are further away (as opposed to neighboring indecies in an Insertion Sort).
+        <br><br>
+        While the Insertion Sort is a stable sort, the Shell Sort is not. The Shell Sort is also an in-place sort, meaning that it does not require any additional memory to sort the array.
       </p>
       <br>
       <h2>Time Complexity</h2>
@@ -188,6 +193,11 @@
   <script type="text/javascript" src="../js/shell.js"></script>
   <script type="text/javascript" src="../js/tools.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <footer>
+    <p class="footer-title">Created by Corey Vickroy Jr, 2022</p>
+    <p>Want to view the source code? Check out the GitHub Repository below</p>
+    <a href="https://github.com/cjvickroy/visual-sort" class="btn btn-primary footer-button"><img class="icon" src="../svg/github.svg">GitHub Repository</a>
+  </footer>
 </body>
 
 </html>

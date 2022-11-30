@@ -11,12 +11,32 @@ html {
     background-color: black;
     color: white;
     font-family: 'Roboto';
+    border-bottom: 3px solid var(--accent);
 }
 
 .page-header h1 {
     margin: 0px;
     padding: 40px 20px;
-    border-bottom: 2px solid var(--accent);
+    color: white;
+}
+
+.page-header a {
+    display: flex;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decordation: unset !important;
+}
+
+.page-header img {
+    height: 50px;
+    margin: auto 20px;
+    margin-right: 0px;
+
 }
 
 body {
@@ -365,4 +385,114 @@ code {
 
 .link-out:hover {
     color: var(--darkAccent);
+}
+
+footer {
+    background-color: black;
+    margin: 0;
+    padding: 20px 40px;
+    color: white;
+    font-family: 'Roboto';
+    font-size: 16px;
+    border-top: 3px solid var(--accent);
+    height: 140px;
+}
+
+.footer-title {
+    font-weight: bolder;
+}
+
+.footer-button {
+    padding: 10px;
+    background-color: black;
+    border: 2px solid var(--accent);
+    color: white;
+    border-radius: 20px;
+
+}
+
+footer .icon {
+    padding: 0px 10px;
+    position: relative;
+    top: 6.5px;
+}
+
+@media screen and (min-width: 1240px) and (max-width: 1545px){
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .main-left {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 40px;
+    }
+    
+    .main-left .user-controls{
+        flex-direction: row !important;
+        width: calc(100%) - 20px;
+        max-width: unset;
+        margin-right: 0px;
+        margin: auto;
+    }
+    
+    .user-controls .control-slider .slider {
+        width: 100%;
+    }
+    
+    .text-box-text {
+        width: 100%;
+    }
+    
+    .user-controls .control-box p {
+        font-size: 14px;
+        width: 100%;
+        margin: auto;
+        padding-left: 10px;
+    }
+    
+    .user-controls .control-box {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .user-controls button {
+        height: 50px;
+        margin: auto 0;
+    }
+    
+    .text-box-text input {
+        margin: auto;
+    }
+    
+    .control-box h3 {
+        width: calc(100% - 200px);
+    }
+    
+}
+
+@media (max-width: 1240px) {
+    main {
+        flex-direction: column;
+    }
+    
+    .main-left {
+        width: 100%;
+    }
+    
+    .user-controls {
+        width: calc(100% - 80px);
+        max-width: unset;
+    }
+    
+    .main-right{
+        width: 100%;
+    }
+    
+    .element-container {
+        width: calc(100% - 82px);
+        height: 300px;
+    }
 }
