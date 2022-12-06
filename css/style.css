@@ -10,7 +10,7 @@ html {
 .page-header {
     background-color: black;
     color: white;
-    font-family: 'Roboto';
+    font-family: 'Noto Sans', sans-serif;
     border-bottom: 3px solid var(--accent);
 }
 
@@ -47,13 +47,13 @@ body {
 .small-header {
     padding: 60px;
     padding-bottom: 0px;
-    font-family: 'Roboto';
+    font-family: 'Noto Sans', sans-serif;
 }
 
 main {
     padding: 60px 60px;
     margin: 40px 10%;
-    font-family: 'Roboto';
+    font-family: 'Noto Sans', sans-serif;
     display: flex;
     flex-direction: row;
     background-color: #000000;
@@ -171,7 +171,7 @@ main a {
     border-radius: 20px;
     padding: 10px 20px;
     font-size: 18px;
-    font-family: 'Roboto';
+    font-family: 'Noto Sans', sans-serif;
     cursor: pointer;
     text-decoration: unset;
     margin-bottom: 20px;
@@ -194,7 +194,7 @@ main a {
     border-radius: 20px;
     padding: 10px 20px;
     font-size: 18px;
-    font-family: 'Roboto';
+    font-family: 'Noto Sans', sans-serif;
     cursor: pointer;
     max-width: 200px;
 }
@@ -230,7 +230,7 @@ main a {
 }
 
 .text-box-text input {
-    height: 30px;
+    height: 16px;
     font-size: 18px;
     border-radius: 20px;
     padding: 10px;
@@ -266,7 +266,7 @@ button>p {
 /*------Tabs------*/
 .tabs li a {
     color: white;
-    font-family: 'Roboto';
+    font-family: 'Noto Sans', sans-serif;
     font-weight: bolder;
 }
 
@@ -294,7 +294,7 @@ code {
 
 .tabs-title {
     color: white;
-    font-family: 'Roboto';
+    font-family: 'Noto Sans', sans-serif;
     padding: 10px 30px;
     border-bottom: 3px solid var(--accent);
 }
@@ -306,7 +306,7 @@ code {
     text-align: left;
     padding: 30px;
     border-radius: 20px;
-    font-family: 'Roboto';
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .about-section h2 {
@@ -392,7 +392,7 @@ footer {
     margin: 0;
     padding: 20px 40px;
     color: white;
-    font-family: 'Roboto';
+    font-family: 'Noto Sans', sans-serif;
     font-size: 16px;
     border-top: 3px solid var(--accent);
     height: 140px;
@@ -417,65 +417,15 @@ footer .icon {
     top: 6.5px;
 }
 
-@media screen and (min-width: 1240px) and (max-width: 1545px){
-    main {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .main-left {
-        width: 100%;
-        margin-right: 0 !important;
-        margin-bottom: 40px;
-    }
-    
-    .main-left .user-controls{
-        flex-direction: row !important;
-        width: calc(100%) - 20px;
-        max-width: unset;
-        margin-right: 0px;
-        margin: auto;
-    }
-    
-    .user-controls .control-slider .slider {
-        width: 100%;
-    }
-    
-    .text-box-text {
-        width: 100%;
-    }
-    
-    .user-controls .control-box p {
-        font-size: 14px;
-        width: 100%;
-        margin: auto;
-        padding-left: 10px;
-    }
-    
-    .user-controls .control-box {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-    }
-    
-    .user-controls button {
-        height: 50px;
-        margin: auto 0;
-    }
-    
-    .text-box-text input {
-        margin: auto;
-    }
-    
-    .control-box h3 {
-        width: calc(100% - 200px);
-    }
-    
-}
 
-@media (max-width: 1240px) {
+@media (max-width: 1545px) {
+    .small-header {
+        padding: 20px 10px;
+    }
     main {
         flex-direction: column;
+        padding: 10px;
+        margin: 10px;
     }
     
     .main-left {
@@ -485,14 +435,86 @@ footer .icon {
     .user-controls {
         width: calc(100% - 80px);
         max-width: unset;
+        background-color: unset;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .user-controls button {
+        width: 40px;
+        height: 40px;
+        margin: auto 0;
+    }
+    
+    .control-slider {
+        margin: auto 10px;
+    }
+    
+    .control-box button {
+        content: "Set" !important;
+    }
+    
+    .control-box button p {
+        display: initial !important;
+        margin: auto;
+        font-size: 15px;
+    }
+    
+    .user-controls button p {
+        display: none;
+    }
+    
+    .control-box > p:nth-child(3) {
+        font-size: 14px;
     }
     
     .main-right{
         width: 100%;
+        background-color: unset;
     }
     
     .element-container {
         width: calc(100% - 82px);
         height: 300px;
+        max-width: 800px;
+        margin: auto;
+    }
+    
+    .tabs-container{
+        margin: 10px;
+        margin-top: 40px;
+    }
+    
+    .panels-container {
+        padding: 10px;
+    }
+    
+    .tab-content:after {
+        content: "TIP: You can scroll horizontally to view all code on mobile devices!";
+        font-size: 16px;
+        color: white;
+        font-family: 'Noto Sans', sans-serif;
+    }
+    
+    pre code {
+        margin: 0px;
+    }
+    
+    .tabs-list-container {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        width: 100%;
+    }
+    
+    .tabs {
+        justify-content: unset;
+        gap: 30px;
+        margin: auto;
+    }
+    
+    .about-section {
+        margin: 0px;
+        margin-top: 30px;
     }
 }
