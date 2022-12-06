@@ -1,12 +1,17 @@
+/*------Main stylesheet for visual-sort------*/
+
+/*Global variables*/
 :root {
     --accent: #53bd9a;
     --darkAccent: #2e6855;
 }
 
+/*Scroll behavior*/
 html {
     scroll-behavior: smooth !important;
 }
 
+/*Global page header*/
 .page-header {
     background-color: black;
     color: white;
@@ -24,6 +29,8 @@ html {
     display: flex;
 }
 
+
+/*Removing decoration from links*/
 a,
 a:link,
 a:visited,
@@ -32,6 +39,7 @@ a:active {
     text-decordation: unset !important;
 }
 
+/*Website Icon*/
 .page-header img {
     height: 50px;
     margin: auto 20px;
@@ -417,7 +425,7 @@ footer .icon {
     top: 6.5px;
 }
 
-
+/*Media query for smaller screen sizes*/
 @media (max-width: 1545px) {
     .small-header {
         padding: 20px 10px;
@@ -444,6 +452,10 @@ footer .icon {
         width: 40px;
         height: 40px;
         margin: auto 0;
+    }
+
+    .user-controls button .icon {
+        width: 20px;
     }
     
     .control-slider {
@@ -516,5 +528,10 @@ footer .icon {
     .about-section {
         margin: 0px;
         margin-top: 30px;
+    }
+    
+    .sort-menu {
+        background-color: #242424;
+        border-radius: 20px;
     }
 }
